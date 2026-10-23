@@ -1,0 +1,217 @@
+/* Falls short + Hearing the same music (thread B).
+ * Exhibits, the levels ladder, the humor twin, the Draymond box, contact and colophon.
+ * Locked Halftime tokens only; every class here carries the he- prefix. */
+
+/* ------------------------------------------------------------------ telestrator marks on quotes */
+mark.he-mark { background: none; color: inherit; }
+.he-ink { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.he-ink-stroke { fill: none; stroke: var(--mark); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ------------------------------------------------------------------ exhibit: split screen (Haiku, cold vs. with the referent) */
+.he-ex { margin-block: 2rem 2.25rem; font-family: var(--f-ui); }
+.he-ex.is-pair .hp-tag { background: var(--bug); color: var(--bug-ink); }
+.he-ex.is-pair .hp-strip-meta { color: var(--ink-2); }
+.he-ex-src { color: var(--ink-2); margin-top: .7rem; }
+.he-ex .hp-mini { background: var(--paper); letter-spacing: .04em; font-size: .68rem; }
+
+.he-pair { display: grid; gap: 1.25rem; }
+.he-side { display: grid; grid-template-rows: auto auto 1fr auto; min-width: 0; background: var(--paper-2); --c: var(--bug-dim); }
+.he-side.is-correct { --c: var(--v-correct); }
+.he-side.is-partial { --c: var(--v-partial); }
+.he-side.is-wrong { --c: var(--v-wrong); }
+.he-side-head {
+  display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: .35rem .9rem;
+  background: var(--bug); color: var(--bug-ink); padding: .6rem .9rem .55rem; border-left: 8px solid var(--c);
+}
+.he-side-mode { margin: 0; display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
+.he-side-k { font: 800 1.1rem/1 var(--f-cond); letter-spacing: .09em; text-transform: uppercase; }
+.he-side-sub { font: 600 .68rem/1.2 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--bug-dim); }
+.he-side-word { margin: 0; font: 900 2.25rem/.9 var(--f-cond); letter-spacing: .03em; text-transform: uppercase; color: var(--c); }
+.he-given { background: var(--bug-2); color: var(--bug-ink); padding: .7rem .9rem .8rem calc(.9rem + 8px); border-top: 3px solid var(--bug-3); }
+.he-given.is-referent { border-top-color: var(--signal); }
+.he-given p { margin: 0; }
+.he-given-k { font: 400 .86rem/1.4 var(--f-ui); color: var(--bug-dim); }
+.he-given-plus { display: block; margin-bottom: .3rem; font: 700 .66rem/1 var(--f-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--signal); }
+.he-given-t { margin-top: .25rem !important; font: 600 1rem/1.4 var(--f-ui); }
+.he-given-ref { margin-top: .3rem !important; font: 800 1.45rem/1.05 var(--f-cond); letter-spacing: .02em; text-transform: uppercase; color: var(--signal); text-wrap: balance; }
+.he-quote { position: relative; margin: 0; padding: .85rem .9rem .2rem calc(.9rem + 8px); }
+.he-quote p { margin: 0; font: 400 1rem/1.6 var(--f-ui); color: var(--ink); }
+.he-side-grades { display: flex; flex-wrap: wrap; gap: .3rem; margin: 0; padding: .7rem .9rem .85rem calc(.9rem + 8px); align-self: end; }
+
+@media (min-width: 720px) {
+  .he-ex.is-pair { margin-inline: calc(-1 * var(--bleed)); }
+  .he-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto auto 1fr auto; column-gap: 12px; row-gap: 0; }
+  .he-side { grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; }
+  .he-side-word { font-size: 2.6rem; }
+  .he-given-ref { font-size: 1.6rem; }
+}
+
+/* ------------------------------------------------------------------ exhibit: pull quote (Qwen and the hourglass) */
+.he-ex.is-pull { margin-block: 2.25rem 2.5rem; padding-top: 1rem; border-top: 3px solid var(--ink); }
+.he-pull-ev { display: flex; align-items: center; gap: .85rem; margin: 0 0 1.1rem; }
+.he-crop { position: relative; display: block; flex: 0 0 3.4rem; max-width: 100%; overflow: hidden; background: var(--bug); box-shadow: 0 0 0 1px var(--rule); }
+.he-crop img { position: absolute; max-width: none; height: auto; }
+.he-pull-ev-t { margin: 0; min-width: 0; font: 500 .92rem/1.4 var(--f-ui); color: var(--ink-2); }
+.he-pull-ev-k { display: block; margin-bottom: .3rem; font: 800 .82rem/1 var(--f-cond); letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+.he-pull-q { position: relative; margin: 0 0 1rem; }
+.he-pull-lead { margin: 0 0 .8rem; font: italic 500 1.62rem/1.3 var(--f-body); font-variation-settings: "opsz" 48; letter-spacing: -.012em; text-wrap: pretty; }
+.he-pull-lead::before { content: "\201C"; }
+.he-pull-lead em { font-style: normal; }
+.he-pull-rest { margin: 0; font: 400 1rem/1.6 var(--f-ui); color: var(--ink-2); }
+.he-pull-rest::after { content: "\201D"; }
+.he-pull-q .he-ink-stroke { stroke-width: 3.4; }
+.he-pull-by { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; padding-top: .8rem; border-top: 1px solid var(--rule); }
+.he-pull-who { display: flex; flex-wrap: wrap; align-items: baseline; gap: .15rem .55rem; }
+.he-pull-lab { font: 500 .76rem/1.2 var(--f-ui); color: var(--ink-2); }
+.he-pull-chips { display: flex; flex-wrap: wrap; gap: .3rem; }
+.he-pull-src { flex-basis: 100%; font: 500 .74rem/1.4 var(--f-ui); color: var(--ink-2); }
+@media (min-width: 720px) {
+  .he-pull-lead { font-size: 2.05rem; line-height: 1.25; text-indent: -.4em; }
+  .he-crop { flex-basis: 4rem; }
+}
+
+/* ------------------------------------------------------------------ "Where JesterBench falls short" reads as fine print */
+[data-section="where-jesterbench-falls-short"] > p { font: 400 1.02rem/1.62 var(--f-ui); }
+[data-section="where-jesterbench-falls-short"] > p > strong:first-child {
+  font: 800 1.12em/1 var(--f-cond); letter-spacing: .06em; text-transform: uppercase;
+}
+[data-section="where-jesterbench-falls-short"] > p:has(> strong:first-child) { margin-top: 1.6em; }
+[data-section="where-jesterbench-falls-short"] > .hp-h2 + p:has(> strong:first-child) { margin-top: 0; }
+@media (min-width: 720px) {
+  [data-section="where-jesterbench-falls-short"] > p { font-size: 1.08rem; }
+}
+
+/* ------------------------------------------------------------------ the four levels, as a difficulty ladder */
+.he-levels { margin: 1.1rem 0 1.75rem; font-family: var(--f-ui); }
+.he-levels-key { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1rem; margin: 0 0 .65rem; font: 700 .68rem/1.2 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.he-key-item { display: inline-flex; align-items: center; gap: .4rem; }
+.he-key-sw { width: .75rem; height: .75rem; box-shadow: inset 0 0 0 1.5px var(--ink-2); }
+.he-key-item.is-run .he-key-sw { background: var(--btn); box-shadow: none; }
+.he-key-axis { margin-left: auto; }
+.he-key-axis::after { content: ""; display: inline-block; width: 0; height: 0; margin-left: .4rem; vertical-align: -.05em; border: .3rem solid transparent; border-top: .42rem solid currentColor; border-bottom: 0; }
+.he-ladder { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+.he-rung { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: .85rem; align-items: start; margin: 0; padding: .75rem .9rem .8rem .75rem; background: var(--paper-2); }
+.he-rung.is-not { background: none; box-shadow: inset 0 0 0 1.5px var(--rule); }
+.he-rung.is-run + .he-rung.is-not { margin-top: .5rem; }
+.he-meter { display: flex; align-items: flex-end; gap: 2px; height: 1.6rem; margin-top: .1rem; }
+.he-meter-bar { flex: 1 1 0; box-shadow: inset 0 0 0 1.5px var(--rule); }
+.he-meter-bar.is-on { background: var(--ink-2); box-shadow: none; }
+.he-meter.is-run .he-meter-bar.is-on { background: var(--btn); }
+.he-rung-text { margin: 0; font: 400 1rem/1.5 var(--f-ui); }
+.he-rung-name { display: block; margin-bottom: .25rem; font: 800 1.05rem/1.1 var(--f-cond); letter-spacing: .08em; text-transform: uppercase; }
+.he-rung.is-not .he-rung-text { color: var(--ink-2); }
+.he-rung.is-not .he-rung-name { color: var(--ink); }
+
+/* ------------------------------------------------------------------ humor twin: the player comp */
+.he-twin { margin-block: 2.25rem; }
+.he-twin .hp-strip { margin-bottom: 1rem; }
+.he-twin-body { display: grid; gap: 1.1rem; }
+.he-twin-body > * { margin: 0; min-width: 0; }
+.he-comp-k { font: 700 .7rem/1 var(--f-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--signal); }
+.he-comp-head .he-comp-k { margin: 0 0 .4rem; }
+.he-comp-name { margin: 0; font: 900 2.9rem/.92 var(--f-cond); letter-spacing: .02em; text-transform: uppercase; text-wrap: balance; }
+.he-comp-name.is-empty { color: var(--bug-dim); font-size: 2.3rem; }
+.he-comp-lab { margin: .45rem 0 0; font: 600 .78rem/1.2 var(--f-ui); letter-spacing: .07em; text-transform: uppercase; color: var(--bug-dim); }
+.he-comp-say { font: 500 1rem/1.45 var(--f-ui); }
+.he-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.he-stat:first-child { padding-left: 0; border-left: 0; }
+.he-comp-lists { display: grid; gap: 1rem; }
+.he-comp-list-h { display: flex; align-items: center; gap: .45rem; margin: 0 0 .5rem; font: 800 .92rem/1 var(--f-cond); letter-spacing: .1em; text-transform: uppercase; }
+.he-comp-list-n { font-variant-numeric: tabular-nums; color: var(--bug-dim); }
+.he-comp-sw { width: .7rem; height: .7rem; flex: none; }
+.he-comp-list.is-got .he-comp-sw { background: var(--v-correct); }
+.he-comp-list.is-missed .he-comp-sw { box-shadow: inset 0 0 0 1.5px var(--bug-dim); }
+.he-comp-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+.he-call { margin: 0; padding: .42rem .65rem .45rem .75rem; min-width: 0; display: flex; flex-direction: column; gap: .2rem; background: var(--bug-2); box-shadow: inset 3px 0 0 var(--k); --k: var(--bug-3); }
+.he-comp-list.is-got .he-call { --k: var(--v-correct); }
+.he-call-name { font: 800 .98rem/1.05 var(--f-cond); letter-spacing: .05em; text-transform: uppercase; }
+.he-call-mode { font: 600 .66rem/1.15 var(--f-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--bug-dim); }
+.he-comp-none { margin: 0; font: 500 .9rem/1.4 var(--f-ui); color: var(--bug-dim); }
+.he-comp-next { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem 1.1rem; font: 500 .92rem/1.4 var(--f-ui); padding-top: .9rem; border-top: 1px solid var(--bug-3); }
+.he-comp-next-k { font: 700 .68rem/1 var(--f-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--bug-dim); }
+.he-comp-next-e { display: inline-flex; align-items: baseline; gap: .45rem; white-space: nowrap; }
+.he-comp-next-m { font: 800 1rem/1 var(--f-cond); letter-spacing: .05em; text-transform: uppercase; }
+.he-comp-next-n { color: var(--bug-dim); font-variant-numeric: tabular-nums; }
+@media (max-width: 719.98px) { .he-comp-next-k { flex-basis: 100%; } }
+.he-comp-career, .he-comp-fine { margin: 0; }
+.he-comp-fine { margin-top: -.6rem; }
+.he-need { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; }
+.he-need-pips { display: flex; gap: 3px; }
+.he-need-pip { width: 1.75rem; height: 10px; box-shadow: inset 0 0 0 1.5px var(--signal); }
+.he-need-pip.is-on { background: var(--signal); }
+.he-need-t { font: 700 .74rem/1.2 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--bug-dim); font-variant-numeric: tabular-nums; }
+a.hp-btn { text-decoration: none; }
+.hp-panel a.hp-btn { color: var(--on-signal); }
+.he-twin-go { justify-self: start; }
+@media (min-width: 720px) {
+  .he-twin-body { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); column-gap: 2rem; align-items: start; }
+  .he-comp-head { grid-column: 1; grid-row: 1; }
+  .he-stats { grid-column: 1; grid-row: 2; }
+  .he-comp-lists { grid-column: 2; grid-row: 1 / span 2; }
+  .he-comp-next, .he-comp-career, .he-comp-fine { grid-column: 1 / -1; }
+  .he-comp-name { font-size: 3.4rem; }
+  .he-twin-body:has(.he-need) { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ------------------------------------------------------------------ Draymond: the open case */
+.he-dray { margin-block: 2rem 1.75rem; }
+.he-dray > .hp-figure { margin-block: 0; }
+.he-dray > .hp-figure .hp-figcap { padding-inline: var(--gl) var(--gr); }
+.he-dray > .hp-wide { margin-block: .9rem 0; }
+.he-dray-line { margin: .1rem 0 .3rem; }
+.he-dray-who { display: block; margin-bottom: .4rem; font: 700 .7rem/1 var(--f-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.he-dray-line p { margin: 0; font: 800 2rem/1 var(--f-cond); letter-spacing: .01em; text-transform: uppercase; text-wrap: balance; }
+.he-dray-hear { display: inline-flex; align-items: center; gap: .35rem; min-height: 44px; margin-bottom: .5rem; font: 700 .9rem/1 var(--f-ui); color: var(--link); }
+.he-dray-out { margin-top: 1rem; transition: opacity .2s; }
+.he-dray-out:empty { display: none; }
+.he-dray-out.is-stale { opacity: .5; }
+.he-dray-out .hp-notice { margin-bottom: .6rem; }
+.he-dray-out a { color: var(--link); }
+.he-dray-wait { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
+.he-dray-wait .hp-link { color: var(--ink-2); }
+.he-plaus.is-plausible { --c: var(--v-correct); }
+.he-plaus.is-maybe { --c: var(--v-partial); }
+.he-plaus.is-unlikely { --c: var(--bug-dim); }
+.he-dray-self-t { margin: 0 0 .45rem; font: 600 1rem/1.45 var(--f-ui); }
+@media (min-width: 720px) {
+  .he-dray > .hp-figure .hp-figcap { padding-inline: 0; }
+  .he-dray-line p { font-size: 2.5rem; }
+}
+
+/* ------------------------------------------------------------------ contact */
+.he-contact { margin: 1.25rem 0 2.75rem; }
+.he-contact-l3 { width: 100%; }
+.he-contact .hp-l3-main { gap: .75rem; padding: .95rem 1rem 1.05rem; }
+.he-contact-addr { font: 800 2.1rem/1.05 var(--f-cond); letter-spacing: .02em; color: var(--bug-ink); overflow-wrap: anywhere; user-select: all; -webkit-user-select: all; }
+.he-contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; }
+.he-contact-actions .hp-btn { min-height: 44px; font-size: .95rem; }
+.he-contact-status { font: 700 .85rem/1.2 var(--f-ui); color: var(--signal); }
+.he-contact-status:empty { display: none; }
+.he-contact-guess { margin: 0; font: 500 .94rem/1.45 var(--f-ui); color: var(--bug-ink); }
+.he-contact-guess q { font-style: italic; }
+.he-contact-fine { margin: 0; }
+@media (min-width: 720px) { .he-contact-addr { font-size: 2.6rem; } }
+
+/* the draft's closing --- (it fenced off the vault's References, which are not rendered) */
+[data-section="hearing-the-same-music"] > hr:last-child { display: none; }
+
+/* ------------------------------------------------------------------ colophon */
+.he-colo { margin-top: 3.5rem; padding-top: 1rem; border-top: 3px solid var(--ink); font: 400 .86rem/1.55 var(--f-ui); color: var(--ink-2); }
+.he-colo-h { margin: 0 0 .5rem; font: 800 .92rem/1 var(--f-cond); letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+.he-colo dl { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); }
+.he-colo dt { margin-top: .75rem; font: 700 .7rem/1.3 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
+.he-colo dd { margin: .15rem 0 0; min-width: 0; }
+.he-colo code { font: 700 1em/1 var(--f-ui); color: var(--ink); }
+.he-colo-built { margin: 1rem 0 0; font-size: .78rem; }
+@media (min-width: 720px) {
+  .he-colo dl { grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: 1.25rem; }
+  .he-colo dt, .he-colo dd { margin: 0; padding-block: .45rem; border-top: 1px solid var(--rule); }
+  .he-colo dt { padding-top: .6rem; }
+}
+
+/* Qwen's hourglass answer as a margin note (coordinator, 23 Oct) */
+.he-qnote .he-qnote-who { margin: 0 0 .35em; font: 600 .82rem/1.35 var(--f-ui); color: var(--ink-2); }
+.he-qnote .he-qnote-who strong { font: 800 .95rem/1 var(--f-cond); letter-spacing: .03em; text-transform: uppercase; color: var(--ink); }
+.he-qnote .he-qnote-q { margin: 0 0 .45em; font: italic 400 1rem/1.45 var(--f-body); color: var(--ink); }
+.he-qnote .he-qnote-g { margin: 0; font: 600 .72rem/1.35 var(--f-ui); letter-spacing: .02em; color: var(--ink-2); }
+.he-qnote .he-nw { white-space: nowrap; }
