@@ -113,8 +113,7 @@
     if (!a0) return null;
     return h("figure", { class: "jb-exhibit he-ex is-pair hp-wide" },
       HP.strip("Split screen", `${a0.model} · ${JB.shortName(a0.item_id)}`),
-      h("div", { class: "he-pair" }, rule.answers.map(side)),
-      h("figcaption", { class: "hp-src he-ex-src", text: `Both answers verbatim, with their real grades. Only the explanation grade counts. Underlines added.` }));
+      h("div", { class: "he-pair" }, rule.answers.map(side)));
   };
 
   /** A tight crop of the public item's own focus box (JB.focus), nothing else from the frame. */
