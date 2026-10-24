@@ -43,7 +43,7 @@ That was the "seed" (ha!) of my own idea: what if I used this as a basis to crea
 
 ### What gets measured gets trained
 
-Every single time a new AI model is announced, its release is accompanied by a slew of benchmark scores. These inscrutable names — SWE-bench Verified, GPQA Diamond, ARC-AGI-2, Humanity's Last Exam — essentially describe collections of questions/tasks that researchers use to assess model capabilities in different domains.
+Every single time a new AI model is announced, its release is accompanied by a slew of benchmark scores. These inscrutable names — [SWE-bench Verified](https://www.swebench.com/), [GPQA Diamond](https://github.com/idavidrein/gpqa), [ARC-AGI-2](https://arcprize.org/arc-agi/2/), [Humanity's Last Exam](https://lastexam.ai/) — essentially describe collections of questions/tasks that researchers use to assess model capabilities in different domains.
 
 The nuances of benchmark construction are probably a bit too much for this piece, but it's undeniable that benchmark construction highly influences the trajectory of model development. I talk a bit more about this in [a primer on RL environments](https://nicholasachow.substack.com/p/why-are-there-suddenly-so-many-ai), but verifiable technical domains are more amenable to benchmarking, while softer, non-verifiable topics (like humor) are much harder to approach.
 
