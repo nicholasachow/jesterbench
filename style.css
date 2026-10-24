@@ -101,6 +101,20 @@ button { font: inherit; color: inherit; }
 
 .hp-header { padding-bottom: 1.25rem; margin-bottom: 1rem; border-bottom: 1px solid var(--rule); }
 .hp-kicker { font: 600 .78rem/1.4 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 1rem; }
+.hp-topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.hp-topbar .hp-kicker { margin-bottom: 0; }
+.hp-theme { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; align-items: center; flex: none;
+  width: 64px; height: 34px; padding: 3px; border: 0; border-radius: 999px; background: var(--bug); cursor: pointer; }
+.hp-theme-thumb { position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); border-radius: 999px;
+  background: var(--bug-3); transition: transform .25s var(--ease); }
+.hp-theme.is-dark .hp-theme-thumb { transform: translateX(100%); }
+.hp-theme-i { position: relative; display: grid; place-items: center; color: var(--bug-dim); transition: color .25s var(--ease); }
+.hp-theme:not(.is-dark) .is-sun, .hp-theme.is-dark .is-moon { color: var(--bug-ink); }
+.hp-theme-i svg { display: block; width: 15px; height: 15px; }
+.hp-theme::before { content: ""; position: absolute; inset: -5px; } /* keeps a 44px-tall tap target around the smaller pill */
+@media (prefers-reduced-motion: reduce) { .hp-theme-thumb, .hp-theme-i { transition: none; } }
+.hp-theme:hover .hp-theme-thumb { filter: brightness(1.15); }
+.hp-theme:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 .hp-title { font: 600 3.1rem/1 var(--f-body); font-variation-settings: "opsz" 72; letter-spacing: -.025em; margin: 0 0 .6rem; text-wrap: balance; }
 .hp-dek { font: italic 400 1.25rem/1.4 var(--f-body); color: var(--ink-2); margin: 0; text-wrap: pretty; }
 

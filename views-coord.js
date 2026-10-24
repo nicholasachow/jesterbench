@@ -7,8 +7,38 @@
   const reduced = () => window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------------------------------------------------------------- header */
+  // light/dark toggle: data-theme on <html> overrides the system setting (tokens in style.css);
+  // the choice is a per-reader convenience kept in localStorage (index.html applies it before paint)
+  const isDark = () => {
+    const t = document.documentElement.dataset.theme;
+    return t ? t === "dark" : !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+  };
+  const themeToggle = () => {
+    // a pill switch: sun and moon always visible, a lighter thumb slides behind the active one
+    const SUN = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>';
+    const MOON = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';
+    const btn = h("button", { type: "button", class: "hp-theme", role: "switch", "aria-label": "Dark mode" },
+      h("span", { class: "hp-theme-thumb", "aria-hidden": "true" }),
+      h("span", { class: "hp-theme-i is-sun", html: SUN }),
+      h("span", { class: "hp-theme-i is-moon", html: MOON }));
+    const paint = () => {
+      const dark = isDark();
+      btn.setAttribute("aria-checked", String(dark));
+      btn.classList.toggle("is-dark", dark);
+      btn.title = dark ? "Switch to light mode" : "Switch to dark mode";
+    };
+    btn.addEventListener("click", () => {
+      const next = isDark() ? "light" : "dark";
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem("jb-theme", next); } catch (_) {}
+      paint();
+    });
+    paint();
+    return btn;
+  };
+
   V.header = (doc) => h("header", { class: "hp-header" },
-    h("p", { class: "hp-kicker", text: doc.workingTitle }),
+    h("div", { class: "hp-topbar" }, h("p", { class: "hp-kicker", text: "JesterBench" }), themeToggle()),
     h("h1", { class: "hp-title", text: doc.title }),
     doc.subtitle && h("p", { class: "hp-dek", html: JB.inline(doc.subtitle) }));
 
