@@ -40,3 +40,4 @@ An interactive essay about JesterBench, a small humor benchmark built from one B
 - **Light/dark toggle** at the top. It overrides the system setting and is remembered per browser (`localStorage` key `jb-theme`).
 - **Favicon** is borrowed from nicholasachow.com (`favicon.svg`).
 - **Video** is a still that links out to YouTube, never an embed (Nick's preference).
+- **Cache busting.** GitHub Pages caches files for about 10 minutes. `cache_bust.py` (run by `build_pages.sh`) tags each script, stylesheet and the essay fetch in `index.html` with `?v=<content hash>`, so a deploy never serves a mix of new and stale files.
